@@ -14,7 +14,10 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
-    - name: npm install and build webpack
+      - uses: actions/upload-artifact@master
+        with:
+          name: webpack artifacts
+          path: public/
       run: |
     needs: build
         npm run build
